@@ -1,0 +1,45 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon .",
+    "dev": "nodemon ."
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "sessions/*"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.3",
+    "formidable": "^2.0.1",
+    "joi": "^17.6.2",
+    "knex": "^2.3.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "request-ip": "^3.3.0",
+    "session-file-store": "^1.5.0",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "standard": "^17.0.0"
+  }
+}
