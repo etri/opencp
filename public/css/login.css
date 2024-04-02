@@ -1,0 +1,221 @@
+#login {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+#login .login_left {
+  width: 50%;
+  max-width: 700px;
+  height: 100vh;
+  position: fixed;
+  background: #f7f7f7;
+  padding: 50px;
+}
+
+#login .login_left .login_logo {
+  width: 100%;
+  height: auto;
+}
+
+#login .login_left .login_img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login .login_right {
+  width: 50%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  left: 50%;
+  background: #fff;
+  padding: 100px 50px;
+  overflow: hidden;
+  z-index: 9;
+}
+
+#login .login_right::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -250px;
+  width: 600px;
+  height: 600px;
+  background: url(/assets/oscp_logo_03.png);
+  z-index: -1;
+}
+
+#login .login_right .title {
+  width: 100%;
+  height: auto;
+  padding-bottom: 70px;
+}
+
+#login .login_right .title > h2 {
+  font-family: "S-CoreDream-7ExtraBold";
+  font-size: 3.125rem;
+  color: #111;
+  letter-spacing: -0.05rem;
+}
+
+#login .login_right .title > p {
+  font-family: "S-CoreDream-4Regular";
+  font-size: 1rem;
+  color: #999999;
+  letter-spacing: -0.05rem;
+  padding-top: 5px;
+}
+
+#login .login_right .login_input {
+  width: 100%;
+  height: auto;
+}
+
+#login .login_right .login_input .input_con {
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+}
+
+#login .login_right .login_input .input_con label {
+  font-size: 1.125rem;
+  color: #333333;
+}
+
+#login .login_right .login_input .input_con > div {
+  width: 100%;
+  height: auto;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+#login .login_right .login_input .input_con > div.password_con > input {
+  font-family: "S-CoreDream-4Regular";
+  letter-spacing: -0.3rem;
+}
+
+#login .login_right .login_input .input_con input {
+  font-family: "Elice Digital Baeum", sans-serif;
+  border: 0;
+  width: 100%;
+  height: 50px;
+  padding-left: 15px;
+  font-size: 1rem;
+  background: transparent;
+}
+
+#login .login_right .login_input .input_con input::placeholder {
+  font-family: "Elice Digital Baeum", sans-serif;
+  font-size: 1rem;
+  color: #dddddd;
+  letter-spacing: -0.05rem;
+}
+
+#login .login_right .login_input .btn_area {
+  width: 100%;
+  height: auto;
+  padding-bottom: 35px;
+}
+
+#login .login_right .login_input .btn_area > button.login_btn {
+  width: 100%;
+  height: 60px;
+  background: #8286dd;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+#login .login_right .login_input .btn_area > button.login_btn:hover {
+  background: #54578f;
+}
+
+#login .login_right .login_input .login_link {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+#login .login_right .login_input .login_link > button {
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  color: #8f8f8f;
+  letter-spacing: -0.05rem;
+  position: relative;
+}
+
+#login .login_right .login_input .login_link > button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -14px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background: #dddddd;
+}
+
+#login .login_right .login_input .login_link > button:last-child::after {
+  display: none;
+}
+
+#login .login_right .login_input .login_link > button:hover {
+  text-decoration: underline;
+  color: #8286dd;
+}
+
+#login .login_right .login_input .login_link > a {
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  color: #8f8f8f;
+  letter-spacing: -0.05rem;
+  position: relative;
+}
+
+#login .login_right .login_input .login_link > a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -14px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background: #dddddd;
+}
+
+#login .login_right .login_input .login_link > a:last-child::after {
+  display: none;
+}
+
+#login .login_right .login_input .login_link > a:hover {
+  text-decoration: underline;
+  color: #8286dd;
+}
+
+#login .footer {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+}
+
+#login .footer > p {
+  font-size: 0.875rem;
+  color: #bbbbbb;
+}

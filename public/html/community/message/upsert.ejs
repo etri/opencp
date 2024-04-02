@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include(`${rootPath}/javascript.ejs`) %>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/popup.css" />
+    <link rel="stylesheet" href="/css/lib/summernote-lite.min.css" />
+    <link rel="stylesheet" href="/css/lib/sweetalert2.min.css" />
+    <!-- <link rel="stylesheet" href="/css/lib/summernote-file.css" /> -->
+
+    <title>오픈소스 커뮤니티</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <%- include (`${rootPath}/components/header.ejs`) %>
+      <div id="main">
+        <%- include (`${rootPath}/components/side-menu.ejs`) %>
+        <div id="container" class="private">
+          <div class="homepage_area">
+            <div class="homepage_top">
+              <div class="homepage_name">
+                <div class="home_main">
+                  <button>플랫폼 홈페이지</button>
+                  <button class="setting_btn"><img src="/assets/setting_icon_03.png" alt="세팅" /></button>
+                </div>
+                <div class="home_info">
+                  <p>생성일 : <span>2022-10-25</span></p>
+                  <p>가입일 : <span>2022-10-25</span></p>
+                  <p>회원수 : <span>254명</span></p>
+                </div>
+              </div>
+              <div class="homepage_btn">
+                <button class="private_btn">Private</button>
+                <button class="public_btn">Public</button>
+              </div>
+            </div>
+
+            <div class="homepage_board">
+              <div class="board_con board_writing">
+                <div class="title">
+                  <h4>게시판 글쓰기</h4>
+                </div>
+                <div class="board_category">
+                  <ul class="category_area">
+                    <!-- <li>
+                      <p>공지사항</p>
+                      <img src="/assets/delete_icon.png" alt="삭제버튼" />
+                    </li>
+                    <li>
+                      <p>회의록</p>
+                      <img src="/assets/delete_icon.png" alt="삭제버튼" />
+                    </li> -->
+                    <button class="add_btn">
+                      <img src="/assets/add_icon.png" alt="추가버튼" />
+                      Add
+                    </button>
+                  </ul>
+                </div>
+                <div class="writing_area">
+                  <input id="upload-file-input" class="upload_input" type="file" multiple hidden />
+                  <div class="writing_tit">
+                    <input id="input-title" type="text" placeholder="제목을 입력해주세요." />
+                  </div>
+                  <div class="writing_editor">
+                    <div id="summernote"></div>
+                    <div id="hashtag" class="writing_hastag">
+                      <div id="hashtag-list" class="hastag_txt">
+                        <span id="hide-hashtag"></span>
+                        <div class="hashtag_input_box">
+                          <input id="input-hashtag" type="text" placeholder="태그를 입력하거나 선택해주세요. (최대 10개)" />
+                        </div>
+                      </div>
+                      <div id="recommend-hashtag" class="hastag_select">
+                        <div class="tit">
+                          <button>
+                            해시태그 추천
+                            <img src="/assets/down_arrow.png" alt="접기버튼" />
+                          </button>
+                        </div>
+                        <ul class="hastag_con">
+                          <li><button data-hashtag="오픈소스"></button></li>
+                          <li><button data-hashtag="해시태그"></button></li>
+                          <li><button data-hashtag="커뮤니티"></button></li>
+                          <li><button data-hashtag="플랫폼"></button></li>
+                          <li><button data-hashtag="홈페이지"></button></li>
+                          <li><button data-hashtag="소식"></button></li>
+                          <li><button data-hashtag="관리자"></button></li>
+                          <li><button data-hashtag="알림설정"></button></li>
+                          <li><button data-hashtag="시사토론"></button></li>
+                          <li><button data-hashtag="토론"></button></li>
+                          <li><button data-hashtag="설정"></button></li>
+                          <li><button data-hashtag="소통"></button></li>
+                          <li><button data-hashtag="퍼블릭"></button></li>
+                          <li><button data-hashtag="Public"></button></li>
+                          <li><button data-hashtag="프라이빗"></button></li>
+                          <li><button data-hashtag="Private"></button></li>
+                          <li><button data-hashtag="공개"></button></li>
+                          <li><button data-hashtag="파일"></button></li>
+                          <li><button data-hashtag="생성자"></button></li>
+                          <li><button data-hashtag="준회원"></button></li>
+                          <li><button data-hashtag="정회원"></button></li>
+                          <li><button data-hashtag="자료"></button></li>
+                          <li><button data-hashtag="취미"></button></li>
+                          <li><button data-hashtag="프로젝트"></button></li>
+                          <li><button data-hashtag="게시글"></button></li>
+                          <li><button data-hashtag="게시판"></button></li>
+                          <li><button data-hashtag="경제"></button></li>
+                          <li><button data-hashtag="애트리"></button></li>
+                          <li><button data-hashtag="좋은글"></button></li>
+                          <li><button data-hashtag="신규홈페이지"></button></li>
+                          <li><button data-hashtag="추천태그"></button></li>
+                          <li><button data-hashtag="추천글"></button></li>
+                          <li><button data-hashtag="소통창고"></button></li>
+                          <li><button data-hashtag="구독"></button></li>
+                          <li><button data-hashtag="스크랩"></button></li>
+                          <li><button data-hashtag="개인"></button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="writing_setting rating_con">
+                  <div class="setting_tit">
+                    <div class="setting_box">
+                      <img src="/assets/setting_icon_01.png" alt=" 권한설정" />
+                      <h3>권한 설정</h3>
+                    </div>
+                    <div class="setting_box">
+                      <img src="/assets/rating_icon.png" alt=" 권한표시" />
+                      <span id="current-level" data-level="2">등급</span>
+                    </div>
+                  </div>
+                  <div id="level-rating" class="setting_con reverse">
+                    <ul>
+                      <p>게시글을 볼 수 있는 회원 등급을 설정할 수 있습니다.</p>
+                      <li class="rating_b rating" data-level="6"></li>
+                      <li class="rating_b rating" data-level="5"></li>
+                      <li class="rating_p rating" data-level="4"></li>
+                      <li class="rating_p rating" data-level="3"></li>
+                      <li class="rating_r rating selected" data-level="2"></li>
+                      <li class="rating_r rating" data-level="1"></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div id="board-setting" class="writing_setting">
+                  <div class="setting_tit">
+                    <img src="/assets/setting_icon_02.png" alt=" 게시판설정" />
+                    <h3>게시판 설정</h3>
+                  </div>
+                  <div class="setting_con">
+                    <div class="board_setting">
+                      <div class="tit">
+                        <h4>상단고정</h4>
+                      </div>
+                      <div id="top-fix-config" class="setting_botton">
+                        <button class="setting_botton_l active" data-boolean="true">활성</button>
+                        <button class="setting_botton_r" data-boolean="false">비활성</button>
+                        <p>중요한 게시글은 상단에 고정할 수 있습니다.</p>
+                      </div>
+                    </div>
+
+                    <div class="board_setting">
+                      <div class="tit">
+                        <h4>댓글 공개 여부</h4>
+                      </div>
+                      <div id="comment-invisible-config" class="setting_botton">
+                        <button class="setting_botton_l active" data-boolean="true">허용</button>
+                        <button class="setting_botton_r" data-boolean="false">비허용</button>
+                        <p>댓글을 공개/비공개 할 수 있습니다.</p>
+                      </div>
+                    </div>
+
+                    <div class="board_setting">
+                      <div class="tit">
+                        <h4>댓글 금지</h4>
+                      </div>
+                      <div id="comment-disable-config" class="setting_botton">
+                        <button class="setting_botton_l active" data-boolean="true">허용</button>
+                        <button class="setting_botton_r" data-boolean="false">비허용</button>
+                        <p>댓글 허용/비허용 할 수 있습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="btn_area">
+                  <button class="add_btn">등록</button>
+                  <button class="cancel_btn">취소</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+      <%- include(`${rootPath}/popup/category.ejs`) %>  
+    </div>
+    <script type="text/javascript" src="/js/lib/summernote-lite.min.js"></script>
+    <script type="text/javascript" src="/js/lib/summernote-ko-KR.min.js"></script>
+    <!-- <script type="text/javascript" src="/js/lib/summernote-file-my.js"></script> -->
+    <script type="text/javascript" src="/js/community/message/upsert.js"></script>
+    <script type="text/javascript" src="/js/lib/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="/js/utils/format.js"></script>
+    
+    <script>
+      const communityId = "<%=communityId%>"
+    </script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include(`${rootPath}/javascript.ejs`) %>
+    <%- include(`${rootPath}/css.ejs`) %>
+
+    <link rel="stylesheet" href="/css/common/main-door.css" />
+    <link rel="stylesheet" href="/css/lib/datatables.min.css" />
+
+    <title>커뮤니티형 대문 페이지 템플릿</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <%- include (`${rootPath}/components/header.ejs`) %>
+      <div id="main">
+        <%- include (`${rootPath}/components/side-menu.ejs`) %>
+
+        <div id="container" class="private">
+          <div class="homepage_area">
+            <div class="homepage_btn">
+              <button class="private_btn">페이지 이동형 탭1</button>
+              <button class="public_btn">페이지 이동형 탭2</button>
+            </div>
+            <div id="info-tab-list" class="homepage_info">
+              <div class="title">
+                <div class="homepage_name">
+                  <h2>
+                    <img src="/assets/home_icon.png" alt="홈아이콘" />상위 항목
+                    제목
+                  </h2>
+                </div>
+                <div class="homepage_search">
+                  <div class="search_bar">
+                    <input type="search" />
+                    <button>
+                      <img
+                        src="/assets/homepage_search.png"
+                        alt="홈페이지내검색"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="info_tab">
+                <ul>
+                  <li data-target="top-fist">
+                    <a href="#top-first-tab">상위 첫번째 탭</a>
+                  </li>
+                  <li data-target="top-second">
+                    <a href="#top-second-tab">상위 두번째 탭</a>
+                  </li>
+                  <li data-target="top-third">
+                    <a href="#top-third-tab">상위 세번째 탭</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="top-first-tab" class="homepage_content">
+                상위 첫번째 항목 내용
+              </div>
+
+              <div id="top-second-tab" class="homepage_content">
+                상위 두번째 항목 내용
+              </div>
+
+              <div id="top-third-tab" class="homepage_content">
+                상위 세번째 항목 내용
+              </div>
+            </div>
+
+            <div id="board-tab-list" class="homepage_board">
+              <div class="board_tab">
+                <ul>
+                  <li data-target="bottom-first">
+                    <a href="#bottom-first-tab">하위 첫번재 탭</a>
+                  </li>
+                  <li data-target="bottom-second">
+                    <a href="#bottom-second-tab">하위 두번재 탭</a>
+                  </li>
+                  <li data-target="bottom-third">
+                    <a href="#bottom-third-tab">하위 세번재 탭</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="bottom-first-tab" class="board_con board_user active">
+                하위 첫번째 내용
+              </div>
+
+              <div id="bottom-second-tab" class="board_con board_message">
+                하위 두번째 내용
+              </div>
+
+              <div id="bottom-third-tab" class="board_con board_notice">
+                하위 세번째 내용
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/js/lib/datatables.min.js"></script>
+    <script>
+      $("#info-tab-list").tabs({
+        active: (e, ui) => {},
+        create: (e, ui) => {},
+      })
+
+      $("#board-tab-list").tabs({
+        activate: (e, ui) => {},
+        create: (e, ui) => {},
+      })
+    </script>
+  </body>
+</html>

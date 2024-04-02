@@ -1,0 +1,54 @@
+#upload-file-input {
+  display: none;
+}
+
+.note-editor.note-frame .note-editing-area .note-upload-file-list {
+}
+
+.note-editor.note-frame .note-editing-area .note-upload-file-list .note-upload-file {
+  width: auto;
+  height: auto;
+  padding: 10px 15px;
+  margin: 15px;
+  background: #f4f4f4;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-editor.note-frame .note-editing-area .note-upload-file-list .note-upload-file > a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: "Elice Digital Baeum", sans-serif;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 10px;
+}
+
+.note-editor.note-frame .note-editing-area .note-upload-file-list .note-upload-file > a:hover {
+  text-decoration: underline;
+}
+
+.note-editor.note-frame .note-editing-area .note-upload-file-list .note-upload-file > a::before {
+  margin-right: 10px;
+  content: url(/assets/file_icon_01.png);
+}
+
+.note-editor.note-frame .note-editing-area .note-upload-file-list .note-upload-file > button.file_delete {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+.note-editor.note-frame .note-editing-area .note-upload-file-list .note-upload-file > button.file_delete::before {
+  content: url(/assets/file_delete_icon.png);
+}
+
+.note-editor.note-frame .note-editing-area .note-upload-file-list .note-upload-file > button.file_delete:hover {
+  opacity: 1;
+}

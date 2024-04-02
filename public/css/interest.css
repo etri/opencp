@@ -1,0 +1,322 @@
+/* interest page css */
+.interest_area {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+  padding: 30px;
+}
+
+.interest .interest_area .board_table {
+  padding-bottom: 20px;
+}
+
+.interest .bookmark .board_table {
+  padding-bottom: 30px;
+}
+
+.interest .bookmark .board_table:last-child {
+  padding-bottom: 20px;
+}
+
+.interest .message_box .board_table {
+  padding-bottom: 0;
+}
+
+.interest_area .title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.message_box .title {
+  padding-bottom: 30px;
+}
+
+.interest_area .title .interest_name {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.interest_area .title .interest_name > img {
+  margin-right: 10px;
+}
+
+.interest_area .title .interest_name > h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.subscribe .title .interest_name > h3 {
+  color: #aaded1;
+}
+
+.bookmark .title .interest_name > h3 {
+  color: #ffbebe;
+}
+
+.scrap .title .interest_name > h3 {
+  color: #b7bbff;
+}
+
+.message_box .title .interest_name > h3 {
+  color: #8fbdd1;
+}
+
+.interest_area .interest_category {
+  width: 100%;
+  height: auto;
+  background: #f4f4f4;
+  border: 1px solid #eaeaf1;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.interest_area .interest_category .tit {
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.interest_area .interest_category .tit > button {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.interest_area .interest_category .tit > button > img {
+  margin: 4px 0 0 5px;
+}
+
+.interest_area .interest_category .hashtag_area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 0 15px;
+  border-radius: 2px;
+}
+
+.interest_area .interest_category .hashtag_area .hashtag_con {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dddddd;
+}
+
+.interest_area .interest_category .hashtag_area .hashtag_con:last-child {
+  border-bottom: 0;
+}
+
+.interest_area .interest_category .hashtag_area .hashtag_con .homepage_name {
+  width: 25%;
+  height: auto;
+}
+
+.interest_area .interest_category .hashtag_area .hashtag_con ul.hashtag {
+  width: 75%;
+  height: auto;
+  display: flex;
+  gap: 0 5px;
+}
+
+.interest_area .interest_category .hashtag_area .hashtag_con ul.hashtag > li {
+  min-width: 100px;
+  height: 30px;
+  padding: 0 15px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #8286dd;
+  border: 1px solid #cdcef5;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.interest_area .interest_category .hashtag_area .hashtag_con ul.hashtag > li:hover {
+  color: #fff;
+  border: 1px solid #8286dd;
+  background: #8286dd;
+}
+
+.interest_area .interest_category .hashtag_area .hashtag_con ul.hashtag > li.active {
+  color: #fff;
+  border: 1px solid #8286dd;
+  background: #8286dd;
+}
+
+/* 구독 게시글 */
+.interest_area .category_board_tit {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.interest_area .category_board_tit .board_name {
+  width: auto;
+  height: auto;
+  position: relative;
+  padding-left: 15px;
+}
+
+.interest_area .category_board_tit .board_name::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 16px;
+  background: #8286dd;
+}
+
+.interest_area .category_board_tit .board_name > h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.interest_area .category_board_tit .board_name > h4 > img {
+  margin: 4px 0 0 10px;
+}
+
+.interest_area .category_board_tit .board_setting {
+  width: auto;
+  height: auto;
+  display: flex;
+  gap: 0 5px;
+}
+
+.interest_area .category_board_tit .board_setting > button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.interest_area .category_board_tit .board_setting > button.setting_btn {
+  background: #8286dd;
+}
+
+.interest_area .category_board_tit .board_setting > button.setting_btn:hover {
+  background: #54578f;
+}
+
+.interest_area .category_board_tit .board_setting > button.del_btn {
+  background: #ff8585;
+}
+
+.interest_area .category_board_tit .board_setting > button.del_btn:hover {
+  background: #c74f55;
+}
+
+/* 즐겨찾기 */
+.interest_area .board_category {
+  width: 100%;
+  height: auto;
+  background: #f4f4f4;
+  border: 1px solid #eaeaf1;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  margin: 5px 0 10px;
+  flex-direction: column;
+}
+
+.interest_area .board_category {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+}
+
+.interest_area .board_category .tit {
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.interest_area .board_category .tit > button {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.interest_area .board_category .tit > button > img {
+  margin: 4px 0 0 5px;
+}
+
+.interest_area .board_category ul.category_area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 5px;
+}
+
+.interest_area .board_category ul.category_area > li {
+  width: auto;
+  height: 30px;
+  padding: 0 15px;
+  background: #fff;
+  border: 1px solid #cdcef5;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #8286dd;
+}
+
+.interest_area .board_category ul.category_area > li.active {
+  color: #fff;
+  background: #8286dd;
+  border: 1px solid #8286dd;
+}
+
+.interest_area .board_category ul.category_area > li:hover {
+  color: #fff;
+  background: #8286dd;
+  border: 1px solid #8286dd;
+}
+
+.interest_area .board_category ul.category_area > button {
+  width: 80px;
+  height: 30px;
+  background: #e1e1ff;
+  color: #8286dd;
+  border-radius: 25px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interest_area .board_category ul.category_area > button:hover {
+  background: #d3d3ff;
+}
+
+.interest_area .board_category ul.category_area > button > img {
+  margin-right: 5px;
+}

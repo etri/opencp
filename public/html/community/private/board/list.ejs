@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include(`${rootPath}/javascript.ejs`) %>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/popup.css" />
+    <link rel="stylesheet" href="/css/lib/datatables.min.css" />
+    
+    <title>오픈소스 커뮤니티</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <%- include (`${rootPath}/components/header.ejs`) %>
+      <div id="main">
+        <%- include (`${rootPath}/components/side-menu.ejs`) %>
+        <div id="container" class="private">
+          <div class="homepage_area">
+            <div class="homepage_top">
+              <div class="homepage_name">
+                <div class="home_main">
+                  <button>플랫폼 홈페이지</button>
+                  <button class="setting_btn"><img src="/assets/setting_icon_03.png" alt="세팅"></button>
+                </div>
+                <div class="home_info">
+                  <p>생성일 : <span>2022-10-25</span></p>
+                  <p>가입일 : <span>2022-10-25</span></p>
+                  <p>회원수 : <span>254명</span></p>
+                </div>
+              </div>
+              <div class="homepage_btn">
+                <button class="private_btn">Private</button>
+                <button class="public_btn">Public</button>
+              </div>
+            </div>
+
+            <div class="homepage_board">
+              <div class="board_con board_list">
+                <div class="title">
+                  <div class="homepage_search">
+                    <div class="search_bar">
+                      <input type="search" />
+                      <button>
+                        <img src="/assets/homepage_search.png" alt="홈페이지내검색" />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="board_filter">
+                    <button>Filter<img src="/assets/filter_icon.png" alt="" /></button>
+                  </div>
+                </div>
+                <div id="accd" class="board_category">
+                  <div class="tit">
+                    <button>
+                      카테고리
+                      <img src="/assets/down_arrow.png" alt="접기버튼" />
+                    </button>
+                  </div>
+
+                  <ul class="category_area">    
+                    <button class="add_btn">
+                      <img src="/assets/add_icon.png" alt="추가버튼" />
+                      Add
+                    </button> 
+                  </ul>
+                </div>
+                <div class="board_table">
+                  <div class="page_info">
+                    <div class="total">
+                      <span>Page 1-<span id="page-info">3</span></span>
+                      <span>Total <span id="total-info">30</span>
+                    </div>
+                    <div class="page_number">
+                      <select name="page_number" id="page_select">
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                      </select>
+                    </div>
+                  </div>
+                  <table id="notice-table" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th width="8%">No.</th>
+                        <th width="57%">제목</th>
+                        <th width="10%">작성자</th>
+                        <th width="15%">작성일</th>
+                        <th width="10%">조회수</th>
+                      </tr>
+                    </thead>
+                  </table>
+                  <div class="btn_area">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+      <%- include(`${rootPath}/popup/category.ejs`) %>  
+    </div>
+    <script type="text/javascript" src="/js/lib/datatables.min.js"></script>
+    <script type="text/javascript" src="/js/lib/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="/js/community/private/board/list.js"></script>
+    
+    <script>
+      const communityId = "<%=communityId%>"
+    </script>
+  </body>
+</html>

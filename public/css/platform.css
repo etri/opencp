@@ -1,0 +1,373 @@
+/* 협업플랫폼 메인 css */
+.platform {
+  padding: 0 !important;
+}
+
+.platform .platform_main {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 35px 50px 50px;
+}
+
+.platform .platform_main .title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+.platform .platform_main .title > h3 {
+  font-size: 2.375rem;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: -0.05rem;
+}
+
+.platform .platform_main .title > span {
+  font-size: 0.875rem;
+  color: #bbbbbb;
+  padding-left: 20px;
+  line-height: 30px;
+}
+
+/* slide */
+.slider {
+  margin: 0 auto;
+  max-width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide_group {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.slider .slick-dots {
+  width: 100px;
+  height: 25px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+}
+
+.slider .slick-dots > li {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.slider .slick-dots > li > button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: block;
+  border-radius: 5rem;
+}
+
+.slider .slick-dots li button:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 5rem;
+  transform: translate(-50%, -50%);
+}
+
+.slider .slick-dots li.slick-active button {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slider .slick-dots li.slick-active button::before {
+  background: #fff;
+  opacity: 0.3;
+  content: "";
+  width: 20px;
+  height: 20px;
+}
+
+/* .slider .slick-arrow {
+  z-index: -999999999;
+  width: 40px;
+  height: 72px;
+  position: absolute;
+  top: 50%;
+  display: none !important;
+}
+
+.slider .slick-prev {
+  display: none !important;
+}
+
+.slider .slick-next {
+  display: none !important;
+} */
+
+.platform .platform_main .slider .main_img {
+  width: 100%;
+  height: 400px;
+  border-radius: 5px;
+  background: url(/assets/main_bg.png);
+  display: flex;
+}
+
+.platform .platform_main .slider .main_img .img_con {
+  width: 45%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.platform .platform_main .slider .main_img .txt_con {
+  width: 55%;
+  height: auto;
+}
+
+.platform .platform_main .slider .main_img .txt_con .txt {
+  width: 100%;
+  height: auto;
+  padding: 70px 30px 30px 0;
+}
+
+.platform .platform_main .slider .main_img .txt_con .txt > h4 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #322362;
+  line-height: 60px;
+  padding-bottom: 25px;
+}
+
+.platform .platform_main .slider .main_img .txt_con .txt > p {
+  font-size: 1.125rem;
+  color: #615894;
+  word-break: keep-all;
+  line-height: 30px;
+}
+
+.platform .platform_main .slider .main_img .txt_con .txt > p > span {
+  font-weight: 600;
+  color: #4c408b;
+}
+
+/* 추천페이지 */
+.platform .recommend {
+  width: 100%;
+  height: auto;
+  background: #f3f3f3;
+  padding: 50px;
+}
+
+.platform .recommend .title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.platform .recommend .title > h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.platform .recommend .title .recommend_tab {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 0 15px;
+  padding-left: 20px;
+}
+
+.platform .recommend .title .recommend_tab > button {
+  font-size: 1rem;
+  color: #999;
+  position: relative;
+}
+
+.platform .recommend .title .recommend_tab > button.active {
+  font-weight: 600;
+  color: #8286dd;
+}
+
+.platform .recommend .title .recommend_tab > button.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background: #8286dd;
+}
+
+.platform .recommend .title .recommend_tab > button:hover {
+  font-weight: 600;
+  color: #8286dd;
+}
+
+.platform .recommend .title .recommend_tab > button:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background: #8286dd;
+}
+
+.platform .recommend .gallery-table {
+  border: none;
+}
+
+.platform .recommend .gallery-table thead {
+  display: none;
+}
+
+.platform .recommend .gallery-table tbody {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 55px 15px;
+}
+
+.platform .recommend .gallery-table tbody tr {
+  height: 250px;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.platform .recommend .gallery-table tbody tr:hover {
+  box-shadow: 0px 0px 10px #bbb;
+}
+
+.platform .recommend .gallery-table tbody tr > a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  padding: 40px 15px 15px;
+  box-sizing: border-box;
+}
+
+.platform .recommend .gallery-table tbody tr .txt {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  padding: 0 5px;
+  border-bottom: 1px solid #dddddd;
+  overflow: hidden;
+}
+
+.platform .recommend .gallery-table tbody tr .txt > h4 {
+  flex: 0 0 auto;
+  max-width: 200px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.05rem;
+  padding-bottom: 10px;
+  line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.platform .recommend .gallery-table tbody tr > a.community_con::after {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  background: url(/assets/community_icon.png);
+}
+
+.platform .recommend .gallery-table tbody tr > a.project_con::after {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  background: url(/assets/project_icon.png);
+}
+
+.platform .recommend .gallery-table tbody tr .txt > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 0 0 auto;
+  font-size: 1rem;
+  line-height: 24px;
+  word-break: break-all;
+  color: #444;
+  letter-spacing: -0.05rem;
+}
+
+.platform .recommend .gallery-table tbody tr .info {
+  width: 100%;
+  height: auto;
+  padding: 15px 5px 0;
+  display: flex;
+}
+
+.platform .recommend .gallery-table tbody tr .info > div {
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.platform .recommend .gallery-table tbody tr .info > div.manager {
+  width: 60%;
+}
+
+.platform .recommend .gallery-table tbody tr .info > div.member {
+  width: 40%;
+}
+
+.platform .recommend .gallery-table tbody tr .info > div.manager::before {
+  content: url(/assets/manager_icon.png);
+  margin-right: 5px;
+}
+
+.platform .recommend .gallery-table tbody tr .info > div.member::before {
+  content: url(/assets/member_icon.png);
+  margin-right: 5px;
+}
+
+.platform .recommend .gallery-table tbody tr .info > div.member > p::after {
+  content: "명";
+}
+
+.platform .recommend .gallery-table tbody tr .info > div > img {
+  margin-right: 5px;
+}
+
+.platform .recommend .gallery-table tbody tr .info > div > p {
+  color: #444;
+  font-size: 0.875rem;
+  font-weight: 600;
+}

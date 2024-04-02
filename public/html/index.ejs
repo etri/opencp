@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include(`${rootPath}/javascript.ejs`) %>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/platform.css" />
+
+    <link rel="stylesheet" href="/css/lib/slick.css" />
+    <link rel="stylesheet" href="/css/lib/slick-theme.css" />
+    <link rel="stylesheet" href="/css/lib/datatables.min.css" />
+
+    <title>오픈소스 커뮤니티</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <%- include (`${rootPath}/components/header.ejs`) %>
+      <div id="main">
+        <%- include (`${rootPath}/components/side-menu.ejs`) %>
+        <div id="container" class="platform">
+          <div class="platform_main">
+            <div class="title">
+              <h3>협업 플랫폼</h3>
+              <span>Collaboration Platform</span>
+            </div>
+
+            <div class="slider">
+              <div class="slide_group">
+                <div class="slide">
+                  <div class="main_img">
+                    <div class="img_con">
+                      <img src="/assets/main_img.png" alt="메인이미지" />
+                    </div>
+                    <div class="txt_con">
+                      <div class="txt">
+                        <h4>
+                          오픈소스 커뮤니티<br />
+                          협업 플랫폼
+                        </h4>
+                        <p>
+                          오픈소스 커뮤니티는
+                          <span>누구에게나 프로그램 소스코드에 대한 동등한 접근을 보장</span>하고 책임과 권한을 공유하며 지속적으로
+                          <span>개발자와 사용자의 기여 활동에 의해 프로젝트가 추진</span>되는 자발적 커뮤니티입니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="main_img">
+                    <div class="img_con">
+                      <img src="/assets/main_img.png" alt="메인이미지" />
+                    </div>
+                    <div class="txt_con">
+                      <div class="txt">
+                        <h4>
+                          오픈소스 커뮤니티<br />
+                          협업 플랫폼
+                        </h4>
+                        <p>
+                          오픈소스 커뮤니티는
+                          <span>누구에게나 프로그램 소스코드에 대한 동등한 접근을 보장</span>하고 책임과 권한을 공유하며 지속적으로
+                          <span>개발자와 사용자의 기여 활동에 의해 프로젝트가 추진</span>되는 자발적 커뮤니티입니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="main_img">
+                    <div class="img_con">
+                      <img src="/assets/main_img.png" alt="메인이미지" />
+                    </div>
+                    <div class="txt_con">
+                      <div class="txt">
+                        <h4>
+                          오픈소스 커뮤니티<br />
+                          협업 플랫폼
+                        </h4>
+                        <p>
+                          오픈소스 커뮤니티는
+                          <span>누구에게나 프로그램 소스코드에 대한 동등한 접근을 보장</span>하고 책임과 권한을 공유하며 지속적으로
+                          <span>개발자와 사용자의 기여 활동에 의해 프로젝트가 추진</span>되는 자발적 커뮤니티입니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="recommend">
+            <div class="title">
+              <h3>추천 페이지</h3>
+              <div id="recommend-tab-list" class="recommend_tab">
+                <button class="active" data-type="">전체</button>
+                <button data-type="4">기관</button>
+                <button data-type="1">커뮤니티</button>
+                <button data-type="3">프로젝트</button>
+              </div>
+            </div>
+            <table id="recommend-table" class="gallery-table"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/js/lib/datatables.min.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+  </body>
+</html>

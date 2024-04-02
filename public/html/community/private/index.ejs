@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 여기다 안하면 에러남 -->
+    <%- include(`${rootPath}/javascript.ejs`) %>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/popup.css" />
+    <link rel="stylesheet" href="/css/lib/datatables.min.css" />
+    <link rel="stylesheet" href="/css/lib/jquery.treeview.css" />    
+    <link rel="stylesheet" href="/css/lib/ui.fancytree.css" /> 
+    <title>오픈소스 커뮤니티</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <%- include (`${rootPath}/components/header.ejs`) %>
+      <div id="main">
+        <%- include (`${rootPath}/components/side-menu.ejs`) %>
+
+        <div id="container" class="private">
+          <div class="homepage_area">
+            <div class="homepage_top">
+              <div class="homepage_name">
+                <div class="home_main">
+                  <button></button>
+                  <!-- <button>플랫폼 홈페이지</button> -->
+                  <button class="setting_btn"><img src="/assets/setting_icon_03.png" alt="세팅" /></button>
+                </div>
+                <div class="home_info">
+                  <p>생성일 : <span></span></p>
+                  <p>가입일 : <span></span></p>
+                  <p>회원수 : <span></span></p>
+                  <!-- <p>생성일 : <span>2022-10-25</span></p>
+                  <p>가입일 : <span>2022-10-25</span></p>
+                  <p>회원수 : <span>254명</span></p> -->
+                </div>
+              </div>
+              <div class="homepage_btn">
+                <button class="private_btn">Private</button>
+                <button class="public_btn">Public</button>
+              </div>
+            </div>
+            <div id="info-tab-list" class="homepage_info">
+              <div class="info_tab">
+                <ul>
+                  <li data-target="wiki"><a href="#wiki-tab">위키</a></li>
+                  <li data-target="directory">
+                    <a href="#directory-tab">디렉토리</a>
+                  </li>
+                  <li data-target="connect"><a href="#connect-tab">연결</a></li>
+                </ul>
+                <div class="homepage_search">
+                  <div class="search_bar">
+                    <input type="search" />
+                    <button>
+                      <img src="/assets/homepage_search.png" alt="홈페이지내검색" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div id="wiki-tab" class="homepage_content">
+                <!-- <p>
+                  본 사업은 오픈소스 커뮤니티 활동을 지원하기 위한 협업 온라인플랫폼 구축을 목적으로 합니다. 여기서 말하는 오픈소스 커뮤니티는 누구에게나
+                  프로그램 소스코드에 대한 동등한 접근을 보장하고 책임과 권한을 공유하며 지속적으로 개발자와 사용자의 기여 활동에 의해 프로젝트가 추진되는
+                  자발적 커뮤니티를 말합니다.
+                </p>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+                  the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five
+                  centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+                  Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                  Lorem Ipsum.
+                </p> -->
+              </div>
+
+              <div id="directory-tab" class="homepage_content">
+                <div class="tab_tit">
+                  <h4>디렉토리</h4>
+                </div>
+                <ul id="directory-tree" class="filetree">
+                  <li>
+                    <span class="folder">Folder 1</span>
+                    <ul>
+                      <li><span class="file">Item 1.1</span></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="folder">Folder 2</span>
+                    <ul>
+                      <li>
+                        <span class="folder">Subfolder 2.1</span>
+                        <ul id="folder21">
+                          <li><span class="file">File 2.1.1</span></li>
+                          <li><span class="file">File 2.1.2</span></li>
+                        </ul>
+                      </li>
+                      <li><span class="file">File 2.2</span></li>
+                    </ul>
+                  </li>
+                  <li class="closed">
+                    <span class="folder">Folder 3 (closed at start)</span>
+                    <ul>
+                      <li><span class="file">File 3.1</span></li>
+                    </ul>
+                  </li>
+                  <li><span class="file">File 4</span></li>
+                </ul>
+              </div>
+
+              <div id="connect-tab" class="homepage_content">
+                <div class="tab_tit">
+                  <h4>연결</h4>
+                </div>
+                <div id="connect-tree"></div>
+                <!-- <ul id="connect-tree" class="treeview-red">
+                  <li>
+                    <span>Item 1</span>
+                    <ul>
+                      <li>
+                        <span>Item 1.0</span>
+                        <ul>
+                          <li><span>Item 1.0.0</span></li>
+                        </ul>
+                      </li>
+                      <li><span>Item 1.1</span></li>
+                      <li>
+                        <span>Item 1.2</span>
+                        <ul>
+                          <li>
+                            <span>Item 1.2.0</span>
+                            <ul>
+                              <li><span>Item 1.2.0.0</span></li>
+                              <li><span>Item 1.2.0.1</span></li>
+                              <li><span>Item 1.2.0.2</span></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>Item 1.2.1</span>
+                            <ul>
+                              <li><span>Item 1.2.1.0</span></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>Item 1.2.2</span>
+                            <ul>
+                              <li><span>Item 1.2.2.0</span></li>
+                              <li><span>Item 1.2.2.1</span></li>
+                              <li><span>Item 1.2.2.2</span></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span>Item 2</span>
+                    <ul>
+                      <li>
+                        <span>Item 2.0</span>
+                        <ul>
+                          <li>
+                            <span>Item 2.0.0</span>
+                            <ul>
+                              <li><span>Item 2.0.0.0</span></li>
+                              <li><span>Item 2.0.0.1</span></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span>Item 2.1</span>
+                        <ul>
+                          <li>
+                            <span>Item 2.1.0</span>
+                            <ul>
+                              <li><span>Item 2.1.0.0</span></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>Item 2.1.1</span>
+                            <ul>
+                              <li><span>Item 2.1.1.0</span></li>
+                              <li><span>Item 2.1.1.1</span></li>
+                              <li><span>Item 2.1.1.2</span></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>Item 2.1.2</span>
+                            <ul>
+                              <li><span>Item 2.1.2.0</span></li>
+                              <li><span>Item 2.1.2.1</span></li>
+                              <li><span>Item 2.1.2.2</span></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="open">
+                    <span>Item 3</span>
+                    <ul>
+                      <li class="open">
+                        <span>Item 3.0</span>
+                        <ul>
+                          <li><span>Item 3.0.0</span></li>
+                          <li>
+                            <span>Item 3.0.1</span>
+                            <ul>
+                              <li><span>Item 3.0.1.0</span></li>
+                              <li><span>Item 3.0.1.1</span></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>Item 3.0.2</span>
+                            <ul>
+                              <li><span>Item 3.0.2.0</span></li>
+                              <li><span>Item 3.0.2.1</span></li>
+                              <li><span>Item 3.0.2.2</span></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul> -->
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="board-tab-list" class="homepage_board">
+              <div class="board_tab">
+                <ul>
+                  <li data-target="user">
+                    <a href="#user-tab">회원</a>
+                  </li>
+                  <li data-target="message">
+                    <a href="#message-tab">커뮤니티 메세지</a>
+                  </li>
+                  <li data-target="notice">
+                    <a href="#notice-tab">프라이빗 게시판</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="user-tab" class="board_con board_user active">
+                <div class="title">
+                  <div class="board_name">
+                    <img src="/assets/board_user.png" alt="회원아이콘" />
+                    <h3>회원</h3>
+                    <p>(22)</p>
+                  </div>
+                  <div class="board_btn">
+                    <button title="회원초대하기" class="invite_btn">
+                      <!-- <img src="/assets/user_mail.png" alt="회원초대하기" /> -->
+                      회원초대
+                    </button>
+                    <button title="목록보기" class="list_btn">
+                      <img src="/assets/list_icon_01.png" alt="목록보기" />
+                    </button>
+                  </div>
+                </div>
+                <div class="board_table">
+                  <table id="user-table" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th width="8%">No.</th>
+                        <th width="13%">닉네임</th>
+                        <th width="5%">권한</th>
+                        <th width="18%">전화번호</th>
+                        <th width="22%">이메일</th>
+                        <th width="13%">가입일</th>
+                        <th width="13%">최종접속일</th>
+                        <th width="8%"></th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+
+              <div id="message-tab" class="board_con board_message">
+                <div class="title">
+                  <div class="board_name">
+                    <img src="/assets/board_message.png" alt="메세지아이콘" />
+                    <h3>메세지</h3>
+                    <!-- <span>NEW (3)</span> -->
+                  </div>
+                  <div class="board_btn">
+                    <button title="메세지보내기" class="message_btn">
+                      <!-- <img src="/assets/message_icon.png" alt="메세지보내기" /> -->
+                      메세지발송
+                    </button>
+                    <button title="목록보기" class="list_btn" onclick="location.href = '/community/message/list/<%=communityId%>'">
+                      <img src="/assets/list_icon_01.png" alt="목록보기" >
+                    </button>
+                  </div>
+                </div>
+                <div class="board_table">
+                  <table id="message-table" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th width="8%">No.</th>
+                        <th width="65%">제목</th>
+                        <th width="12%">작성자</th>
+                        <th width="15%">
+                          <span class="custom_sort">날짜</span>
+                        </th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+
+              <div id="notice-tab" class="board_con board_notice">
+                <div class="title">
+                  <div class="board_name">
+                    <img src="/assets/board_notice.png" alt="게시판아이콘" />
+                    <h3>프라이빗 게시판</h3>
+                  </div>
+                  <div class="board_btn">
+                    <button title="목록보기" class="list_btn" onclick="location.href = '/community/private/board/list/<%=communityId%>'">
+                      <img src="/assets/list_icon_01.png" alt="목록보기" />
+                    </button>
+                  </div>
+                </div>
+                <div class="board_category">
+                  <ul class="category_area">
+                    <!-- <li>
+                      <p>공지사항</p>
+                      <img src="/assets/delete_icon.png" alt="삭제버튼" />
+                    </li>
+                    <li>
+                      <p>회의록</p>
+                      <img src="/assets/delete_icon.png" alt="삭제버튼" />
+                    </li> -->
+                    <button class="add_btn">
+                      <img src="/assets/add_icon.png" alt="추가버튼" />
+                      Add
+                    </button>
+                  </ul>
+                </div>
+                <div class="board_table">
+                  <table id="notice-table" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th width="8%">No.</th>
+                        <th width="57%">제목</th>
+                        <th width="10%">작성자</th>
+                        <th width="15%">
+                          <span class="custom_sort">작성일</span>
+                        </th>
+                        <th width="10%">조회수</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include(`${rootPath}/popup/category.ejs`) %>      
+    </div>
+    <script type="text/javascript" src="/js/lib/datatables.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.treeview.js"></script>
+    <script src="/js/lib/jquery.fancytree.ui-deps.js"></script>
+    <script src="/js/lib/jquery.fancytree.js"></script>
+    <script type="text/javascript" src="/js/community/private/index.js"></script>
+    
+    <script>
+      const communityId = "<%=communityId%>"
+    </script>
+  </body>
+</html>

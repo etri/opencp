@@ -1,0 +1,38 @@
+<header id="hder">
+  <div class="hder_area">
+    <div class="logo_con">
+      <a href="/"><img src="/assets/main_logo.png" alt="로고이미지" /></a>
+    </div>
+    <div class="top_memu">
+      <!-- 일단 숨김처리 -->
+      <!-- <ul class="gnb">
+        <li>
+          <a href="#">플랫폼</a>
+        </li>
+        <li>
+          <a href="#">마이페이지</a>
+        </li>nick
+      </ul> -->
+      <div class="all_search">
+        <div class="all_search_con">
+          <button>
+            <img src="/assets/search_icon.png" alt="전체검색" />
+          </button>
+          <input type="search" />
+        </div>
+      </div>
+      <div class="my_ration">
+        <!-- 세션확인용도로 넣어둠 추후에 수정하세여.. (HY) -->
+        <a href="/login">
+          <% if( !session.nick ) {%>
+           <p>로그인</p>
+          <% } else {%> 
+            <p><%=session.nick%></p>
+          <% } %>
+        </a>
+        <!-- <p>김생성</p>
+        <img src="./img/ration_01.png" alt="1등급" /> -->
+      </div>
+    </div>
+  </div>
+</header>
